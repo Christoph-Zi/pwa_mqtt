@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <title>MQTT-Verbindung mit LEDs</title>
+  <style>
+    /* Einfaches Styling für die LEDs und den Button */
+    .led {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin: 10px;
+      display: inline-block;
+      background-color: gray; /* Initialer Zustand */
+    }
+
+    .on {
+      background-color: green; /* LED an */
+    }
+
+    .off {
+      background-color: red; /* LED aus */
+    }
+
+    #status {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>MQTT-Verbindung und LED-Steuerung</h1>
+
+  <!-- LEDs für Verbindung zum Pico W und Broker -->
+  <div>
+    <div id="picoLED" class="led off"></div>
+    <span>Verbindung zum Pico W</span>
+  </div>
+  <div>
+    <div id="brokerLED" class="led off"></div>
+    <span>Verbindung zum Broker</span>
+  </div>
+
+  <!-- Button zum Steuern der LED -->
+  <div>
+    <button id="toggleButton">LED Ein/Aus</button>
+  </div>
+
+  <!-- Statusnachricht -->
+  <div id="status">Verbindung wird hergestellt...</div>
+
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <script src="script.js">
+
+  </script>
+</body>
+</html>
